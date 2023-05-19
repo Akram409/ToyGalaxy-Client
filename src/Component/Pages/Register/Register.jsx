@@ -67,6 +67,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+    console.log(name,photoUrl,email,password)
     setError("");
 
     if (

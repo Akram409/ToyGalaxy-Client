@@ -4,10 +4,10 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
-  const {user , handleLogOut} = useContext(AuthContext)
-  console.log(user)
+  const { user, handleLogOut } = useContext(AuthContext);
+  console.log(user);
   return (
-    <div className="navbar bg-[#00425A] text-white py-4 px-5">
+    <div className="navbar bg-[#4a3da7] text-white py-4 px-5">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -76,8 +76,12 @@ const Navbar = () => {
           <li>
             <Link to="/">Home</Link>
             <Link to="/">All Toys</Link>
-            <Link to="/">My Toys</Link>
-            <Link to="/">Add Toys</Link>
+            {user && (
+              <>
+                <Link to="/">My Toys</Link>
+                <Link to="/">Add Toys</Link>
+              </>
+            )}
             <Link to="/">Blogs</Link>
           </li>
         </ul>
