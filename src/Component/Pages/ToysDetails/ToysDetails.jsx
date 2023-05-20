@@ -35,7 +35,10 @@ const ToysDetails = () => {
             />
           </div>
           <p className='font-bold'>Description: {description}</p>
+          <div className='space-x-2'>
           <Link to='/'><button className="btn font-bold mt-5">Buy Now</button></Link>
+          <Link to='/'><button className="btn font-bold mt-5 btn-secondary ">Edit</button></Link>
+          </div>
         </div>
       </div>
     </div>

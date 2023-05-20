@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Blogs from "../Pages/Blogs/Blogs";
 import AllToys from "../Pages/AllToys/AllToys";
 import ToysDetails from "../Pages/ToysDetails/ToysDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -32,11 +33,12 @@ const router = createBrowserRouter([
         },
         {
             path: '/allToys',
-            element: <AllToys />
+            element: <AllToys />,
+            loader: () => fetch('http://localhost:5000/totalToys')
         },
         {
             path: '/toyDetails/:id',
-            element: <ToysDetails />,
+            element: <PrivateRoutes><ToysDetails /></PrivateRoutes>,
             loader: ({params}) => fetch(`http://localhost:5000/allToys/${params.id}`)
         },
     ]
