@@ -5,7 +5,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, handleLogOut } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   return (
     <div className="navbar bg-[#4a3da7] text-white py-4 px-5">
       <div className="navbar-start">
@@ -75,7 +75,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">
           <li>
             <Link to="/">Home</Link>
-            <Link to="/">All Toys</Link>
+            <Link to="/allToys">All Toys</Link>
             {user && (
               <>
                 <Link to="/">My Toys</Link>

@@ -6,6 +6,8 @@ import Register from "../Pages/Register/Register";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Blogs from "../Pages/Blogs/Blogs";
+import AllToys from "../Pages/AllToys/AllToys";
+import ToysDetails from "../Pages/ToysDetails/ToysDetails";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,15 @@ const router = createBrowserRouter([
         {
             path: '/blogs',
             element: <Blogs />
+        },
+        {
+            path: '/allToys',
+            element: <AllToys />
+        },
+        {
+            path: '/toyDetails/:id',
+            element: <ToysDetails />,
+            loader: ({params}) => fetch(`http://localhost:5000/allToys/${params.id}`)
         },
     ]
   },
