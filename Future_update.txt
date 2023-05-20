@@ -1,0 +1,102 @@
+1.Add sub category in tabs - - >
+  const [activeTab1, setActiveTab1] = useState(0);
+  const handleTabClick1 = (index) => {
+    setActiveTab1(index);
+    
+  };
+Marvel - - >
+ <TabPanel>
+          <Tabs selectedIndex1={activeTab1} onSelect={handleTabClick1}>
+            <TabList className="bg-opacity-0 tabs-boxed">
+              <Tab 
+                className={`tab text-xl text-black font-bold ${
+                  activeTab1 === 0 ? "tab-active" : ""
+                }`}
+              >
+                THOR
+              </Tab>
+              <Tab
+                className={`tab text-xl text-black font-bold ${
+                  activeTab1 === 1 ? "tab-active" : ""
+                }`}
+              >
+                SPIDER MAN
+              </Tab>
+              <Tab
+                className={`tab text-xl text-black font-bold ${
+                  activeTab1 === 2 ? "tab-active" : ""
+                }`}
+              >
+                HULK
+              </Tab>
+            </TabList>
+
+            <TabPanel>
+              <h2>Any content 1</h2>
+            </TabPanel>
+          </Tabs>
+        </TabPanel>
+Avenger - - - > 
+ <TabPanel>
+          <Tabs selectedIndex1={activeTab1} onSelect={handleTabClick1}>
+            <TabList className="bg-opacity-0 tabs-boxed">
+              <Tab
+                className={`tab text-xl text-black font-bold ${
+                  activeTab1 === 0 ? "tab-active" : ""
+                }`}
+              >
+                HAWKEYE
+              </Tab>
+              <Tab
+                className={`tab text-xl text-black font-bold ${
+                  activeTab1 === 1 ? "tab-active" : ""
+                }`}
+              >
+                DR.STRANGE
+              </Tab>
+              <Tab
+                className={`tab text-xl text-black font-bold ${
+                  activeTab1 === 2 ? "tab-active" : ""
+                }`}
+              >
+                LOKI
+              </Tab>
+            </TabList>
+
+            <TabPanel>
+              <h2>Any content 1</h2>
+            </TabPanel>
+          </Tabs>
+        </TabPanel>
+Transformer - - >
+<TabPanel>
+          <Tabs selectedIndex1={activeTab1} onSelect={handleTabClick1}>
+            <TabList className="bg-opacity-0 tabs-boxed">
+              <Tab
+                className={`tab text-xl text-black font-bold ${
+                  activeTab1 === 0 ? "tab-active" : ""
+                }`}
+              >
+                BARRICADE 
+              </Tab>
+              <Tab
+                className={`tab text-xl text-black font-bold ${
+                  activeTab1 === 1 ? "tab-active" : ""
+                }`}
+              >
+                BLACKOUT
+              </Tab>
+              <Tab
+                className={`tab text-xl text-black font-bold ${
+                  activeTab1 === 2 ? "tab-active" : ""
+                }`}
+              >
+             BONECRUSHER
+              </Tab>
+            </TabList>
+
+            <TabPanel>
+              <h2>Any content 1</h2>
+            </TabPanel>
+          </Tabs>
+        </TabPanel>
