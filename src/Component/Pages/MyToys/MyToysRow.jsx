@@ -17,7 +17,7 @@ const MyToysRow = ({ toy, index , handleDelete }) => {
       <td>{toy?.seller}</td>
       <td>{toy?.seller_email}</td>
       <td>{toy?.category_name}</td>
-      <td>{toy?.price}</td>
+      <td>${toy?.price}</td>
       <td>{toy?.rating}</td>
       <td>{toy?.quantity}</td>
       <td>{toy?.description}</td>

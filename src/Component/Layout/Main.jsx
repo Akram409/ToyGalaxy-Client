@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../Pages/Shared/Navbar/Navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../Pages/Shared/Footer/Footer";
 
 const Main = () => {
   return (
@@ -20,6 +21,7 @@ const Main = () => {
         theme="colored"
       />
       <Outlet />
+      <Footer />
     </div>
   );
 };
