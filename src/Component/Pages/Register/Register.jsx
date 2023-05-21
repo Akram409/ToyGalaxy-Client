@@ -11,6 +11,7 @@ import Lottie from "lottie-react";
 import logins from "../../../assets/login.json";
 import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
+import useTitle from "../../../Hooks/Hooks";
 
 const Register = () => {
   const { handleCreateUser, handleGoogle, updateUser } =
@@ -21,7 +22,8 @@ const Register = () => {
   const [error, setError] = useState("");
   const navigation = useNavigation();
   const from = location.state?.from?.pathname || "/";
-
+  useTitle('Register')
+  
   if (navigation.state === "loading") {
     return <p>Loading</p>;
   }

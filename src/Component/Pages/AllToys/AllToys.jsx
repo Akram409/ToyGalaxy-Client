@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import AllToysRow from "./AllToysRow";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../../Hooks/Hooks";
 
 const AllToys = () => {
+  useTitle('All Toys')
   const [toys, setToys] = useState([]);
   const [findText, setFindText] = useState(" ");
   const [currentPage, setCurrentPage] = useState(0);

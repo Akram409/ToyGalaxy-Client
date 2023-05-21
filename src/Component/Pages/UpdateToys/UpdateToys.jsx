@@ -1,14 +1,14 @@
-import { useState } from "react";
+
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
-import CreatableSelect from "react-select/creatable";
 import { toast } from "react-toastify";
+import useTitle from "../../../Hooks/Hooks";
 
 const UpdateToys = () => {
+  useTitle("UpdateToys")
   const item = useLoaderData();
   const {
     _id,
-    category_name,
     img,
     name,
     price,
@@ -52,12 +52,7 @@ const UpdateToys = () => {
       });
   };
 
-  const options = [
-    { value: "Marvel", label: "Marvel" },
-    { value: "Avenger", label: "Avenger" },
-    { value: "StarWar", label: "StarWar" },
-    { value: "Transformer", label: "Transformer" },
-  ];
+
   return (
     <div className="container mx-auto mt-4 bg-[#4a3da7] card shadow-2xl ">
       <h1 className="text-5xl font-bold pt-3 text-center text-white">

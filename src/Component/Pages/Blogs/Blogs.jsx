@@ -1,6 +1,8 @@
 import ph from "/public/ph.jpg";
 import ak from "/public/ak.jpg";
+import useTitle from "../../../Hooks/Hooks";
 const Blogs = () => {
+  useTitle("Blogs")
   return (
     <div className="container mx-auto mt-5">
       <h1 className="text-3xl font-bold text-center text-[#142850] ">

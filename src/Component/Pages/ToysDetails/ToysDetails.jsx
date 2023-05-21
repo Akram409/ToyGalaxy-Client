@@ -1,8 +1,10 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import useTitle from '../../../Hooks/Hooks';
 
 const ToysDetails = () => {
+  useTitle("ToyDetails")
    const user = useLoaderData()
    console.log(user)
    const {_id,description,img,name,price,quantity,rating,seller,seller_email} = user

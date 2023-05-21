@@ -2,8 +2,10 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import CreatableSelect from "react-select/creatable";
 import { toast } from "react-toastify";
+import useTitle from "../../../Hooks/Hooks";
 
 const AddToys = () => {
+  useTitle('Add Toys')
   const [selectedOption, setSelectedOption] = useState(null);
   const {
     register,

@@ -11,8 +11,10 @@ import Lottie from "lottie-react";
 import logins from "../../../assets/login.json";
 import { FcGoogle } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
+import useTitle from "../../../Hooks/Hooks";
 
 const Login = () => {
+  useTitle("Login")
   const {handleLogIn, handleGoogleLogin } =
   useContext(AuthContext);
   const [show, setShow] = useState(false);
