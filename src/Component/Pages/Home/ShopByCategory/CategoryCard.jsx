@@ -3,7 +3,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
 const CategoryCard = ({ item }) => {
-  const { category_name, img, name, price, rating } = item;
+  const { _id, category_name, img, name, price, rating } = item;
   console.log(item);
   return (
     <Link to="/">
@@ -35,9 +35,9 @@ const CategoryCard = ({ item }) => {
           <br />
           <p className="text-xl font-bold">Price: {price}</p>
           <p className="mt-auto">
-            <button className="btn btn-primary font-bold text-white">
+            <Link to={`/toyDetails/${_id}`}><button className="btn btn-primary font-bold text-white">
               View Details
-            </button>
+            </button></Link>
           </p>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { useNavigation } from "react-router-dom";
 import GalleryCard from "./GalleryCard";
 import { useEffect, useState } from "react";
 
+
 const Gallery = () => {
   const [items, setItems] = useState([]);
 
@@ -21,6 +22,7 @@ const Gallery = () => {
   }
 
   return (
+
     <div className="Containers">
       <h1 className="text-5xl font-bold text-center mb-4 text-[#00425A]">Gallery</h1>
       <div className="divider"></div>
