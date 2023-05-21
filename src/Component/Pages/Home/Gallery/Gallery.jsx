@@ -14,7 +14,7 @@ const Gallery = () => {
       });
   }, []);
 
-  console.log(items);
+
   const navigation = useNavigation();
 
   if (navigation.state === "loading") {

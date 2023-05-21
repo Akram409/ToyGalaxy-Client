@@ -88,7 +88,6 @@ const MyToys = () => {
     setCurrentPage(0);
   };
 
-  console.log(toys);
   return (
     <div className="container mx-auto mt-5">
       <div className="overflow-x-auto w-full">

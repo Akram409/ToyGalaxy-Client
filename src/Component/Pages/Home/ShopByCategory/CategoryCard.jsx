@@ -4,7 +4,7 @@ import "@smastrom/react-rating/style.css";
 
 const CategoryCard = ({ item }) => {
   const { _id, category_name, img, name, price, rating } = item;
-  console.log(item);
+
   return (
     <Link to="/">
       <div className="overflow-hidden relative transition duration-200 transform hover:-translate-y-2 rounded shadow-lg hover:shadow-2xl">

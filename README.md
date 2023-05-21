@@ -1,6 +1,6 @@
 ## Project Name: ToyGalaxy
 
-Live Link : [ToyGalaxy](https://dragon-s-kitchen.web.app/).
+Live Link : [ToyGalaxy](https://toygalaxy-client.web.app/).
 
 ## Basic Project Structure Setup Details
 

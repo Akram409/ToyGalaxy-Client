@@ -6,6 +6,11 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 const Navbar = () => {
   const { user, handleLogOut } = useContext(AuthContext);
   console.log(user);
+
+  const logOut = () => {
+    handleLogOut();
+  };
+
   return (
     <div className="navbar bg-[#4a3da7] text-white py-4 px-5">
       <div className="navbar-start">
@@ -31,17 +36,21 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-error rounded-box w-52"
           >
             <li>
-            <Link to="/">Home</Link>
-            <Link to="/allToys">All Toys</Link>
-            {user ? (
-              <>
-                <Link to="/myToys">My Toys</Link>
-                <Link to="/addToys">Add Toys</Link>
-              </>
-            ) :
-            <Link to="/login">Login</Link>}
-            <Link to="/blogs">Blogs</Link>
-          </li>
+              <Link to="/">Home</Link>
+              <Link to="/allToys">All Toys</Link>
+              {user ? (
+                <>
+                  <Link to="/myToys">My Toys</Link>
+                  <Link to="/addToys">Add Toys</Link>
+                  <Link to="/" onClick={logOut}>
+                    LogOut
+                  </Link>
+                </>
+              ) : (
+                <Link to="/login">Login</Link>
+              )}
+              <Link to="/blogs">Blogs</Link>
+            </li>
           </ul>
         </div>
         <div className="flex items-center gap-2">
@@ -64,9 +73,13 @@ const Navbar = () => {
               <>
                 <Link to="/myToys">My Toys</Link>
                 <Link to="/addToys">Add Toys</Link>
+                <Link to="/" onClick={logOut}>
+                  LogOut
+                </Link>
               </>
-            ) :
-            <Link to="/login">Login</Link>}
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
             <Link to="/blogs">Blogs</Link>
           </li>
         </ul>
@@ -79,12 +92,12 @@ const Navbar = () => {
             className="btn btn-ghost btn-circle avatar showName"
           >
             {user?.photoURL ? (
-              <div className="w-16 rounded-full img__wrap">
+              <div className="w-20 rounded-full img__wrap">
                 <img className="img__img" src={user?.photoURL} />
                 <p className="img__description">{user?.displayName}</p>
               </div>
             ) : (
-              <div className="w-16 rounded-full img__wrap">
+              <div className="w-20 rounded-full img__wrap">
                 <img
                   className="img__img "
                   src={
