@@ -5,8 +5,8 @@ const Banner = () => {
       <div className="w-full  ">
         <div className="w-full relative">
           <img src={banner} className="w-full object-fill h-[89vh]" />
-          <div className="absolute flex items-center h-full gap-5 left-16 top-3">
-            <div className="space-y-7 pl-12 w-1/2">
+          <div className="absolute flex items-center h-full gap-5 left-16 top-3 ">
+            <div className="lg:space-y-7 lg:pl-12 w-full lg:w-1/2 ">
               <h1 className="text-5xl font-bold text-white ">
                 IT'S TIME <br />
                 <span className="text-7xl text-yellow-500">TO PLAY!</span>

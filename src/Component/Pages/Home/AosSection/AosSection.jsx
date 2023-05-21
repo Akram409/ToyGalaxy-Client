@@ -18,7 +18,7 @@ const AosSection = () => {
         </h1>
         <div className="container  mx-auto divider"></div>
       </div>
-      <div className="flex justify-center items-center" data-aos="fade-up">
+      <div className="flex-row lg:flex lg:justify-center lgz:items-center " data-aos="fade-up">
         <div className="overflow-hidden relative transition duration-200 transform hover:-translate-y-2 rounded shadow-lg hover:shadow-2xl">
           <img
             src="https://i.ibb.co/5TJ9L7r/spiderman1.jpg"
@@ -30,7 +30,7 @@ const AosSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-evenly items-center mt-5">
+      <div className="flex-row lg:flex lg:justify-evenly lg:items-center mt-5">
         <div data-aos="fade-up-right">
           <div className="overflow-hidden relative transition duration-200 transform hover:-translate-y-2 rounded shadow-lg hover:shadow-2xl">
             <img
@@ -55,7 +55,7 @@ const AosSection = () => {
             </div>
           </div>
         </div>
-        <div data-aos="fade-up-left">
+        <div data-aos="lg:fade-up-left md:fade-up">
           <div className="overflow-hidden relative transition duration-200 transform hover:-translate-y-2 rounded shadow-lg hover:shadow-2xl">
             <img
               src="https://i.ibb.co/K6yRk5p/transformer-1.jpg"
@@ -68,7 +68,7 @@ const AosSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center mt-5" data-aos="flip-up">
+      <div className="flex-row lg:flex lg:justify-center lg:items-center mt-5" data-aos="flip-up">
         <div className="overflow-hidden relative transition duration-200 transform hover:-translate-y-2 rounded shadow-lg hover:shadow-2xl">
           <img
             src="https://i.ibb.co/5TJ9L7r/spiderman1.jpg"
@@ -80,7 +80,7 @@ const AosSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-evenly items-center mt-5">
+      <div className="flex-row lg:flex lg:justify-evenly lg:items-center mt-5">
         <div data-aos="zoom-in-right">
           <div className="overflow-hidden relative transition duration-200 transform hover:-translate-y-2 rounded shadow-lg hover:shadow-2xl">
             <img
@@ -105,7 +105,7 @@ const AosSection = () => {
             </div>
           </div>
         </div>
-        <div data-aos="zoom-in-left">
+        <div data-aos="lg:zoom-in-left md:zoom-in">
           <div className="overflow-hidden relative transition duration-200 transform hover:-translate-y-2 rounded shadow-lg hover:shadow-2xl">
             <img
               src="https://i.ibb.co/K6yRk5p/transformer-1.jpg"
