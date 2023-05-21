@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { CiSearch } from "react-icons/ci";
 import MyToysRow from "./MyToysRow";
+import Swal from 'sweetalert2'
+
 
 const MyToys = () => {
     const {user} = useContext(AuthContext)
@@ -31,6 +32,36 @@ const MyToys = () => {
       setCurrentPage(0);
     }
 
+    const handleDelete = _id =>{
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          fetch(`http://localhost:5000/deleteToy/${_id}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.deletedCount > 0) {
+                Swal.fire(
+                  "Deleted!",
+                  "Your Information has been deleted.",
+                  "success"
+                );
+              }
+              const remaining = toys.filter(toy => toy._id !== _id);
+            setToys(remaining); 
+            });
+        }
+      });
+  }
     // console.log(toys)
     return (
         <div className="container mx-auto mt-5">
@@ -48,13 +79,14 @@ const MyToys = () => {
               <th>Price</th>
               <th>Rating</th>
               <th>Quantity</th>
+              <th>Description</th>
               <th>Update</th>
               <th>Delete</th>
             </tr>
           </thead>
           <tbody>
             {toys.map((toy, idx) => (
-              <MyToysRow key={toy._id} toy={toy} index={idx}></MyToysRow>
+              <MyToysRow key={toy._id} toy={toy} index={idx} handleDelete={handleDelete}></MyToysRow>
             ))}
           </tbody>
         </table>

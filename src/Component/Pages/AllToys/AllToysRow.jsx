@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const AllToysRow = ({ toy, index }) => {
-  console.log(toy._id);
   return (
     <tr className="text-center">
       <th>{index + 1}</th>

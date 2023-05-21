@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const MyToysRow = ({ toy, index }) => {
+const MyToysRow = ({ toy, index , handleDelete }) => {
     return (
         <tr className="text-center">
       <th>{index + 1}</th>
@@ -20,11 +20,12 @@ const MyToysRow = ({ toy, index }) => {
       <td>{toy?.price}</td>
       <td>{toy?.rating}</td>
       <td>{toy?.quantity}</td>
+      <td>{toy?.description}</td>
       <td>
-        <Link to="/"><button className="btn btn-accent bg-[#1F8A70] text-white border-none hover:bg-[#1F8A70]" >Update</button></Link>
+        <Link to={`/updateToys/${toy?._id}`}><button className="btn btn-accent bg-[#1F8A70] text-white border-none hover:bg-[#1F8A70]" >Update</button></Link>
       </td>
       <td>
-        <Link to='/'><button className="btn bg-[#FC7300] text-white border-none hover:bg-[#FC7300]">Delete</button></Link>
+        <button onClick={() => handleDelete(toy?._id)} className="btn bg-[#FC7300] text-white border-none hover:bg-[#FC7300]">Delete</button>
       </td>
     </tr>
     );

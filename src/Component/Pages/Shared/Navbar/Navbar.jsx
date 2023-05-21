@@ -76,12 +76,13 @@ const Navbar = () => {
           <li>
             <Link to="/">Home</Link>
             <Link to="/allToys">All Toys</Link>
-            {user && (
+            {user ? (
               <>
                 <Link to="/myToys">My Toys</Link>
                 <Link to="/addToys">Add Toys</Link>
               </>
-            )}
+            ) :
+            <Link to="/login">Login</Link>}
             <Link to="/blogs">Blogs</Link>
           </li>
         </ul>

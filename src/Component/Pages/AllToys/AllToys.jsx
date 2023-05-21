@@ -41,7 +41,6 @@ const AllToys = () => {
       fetch(`http://localhost:5000/searchToyByToySeller/${findText}`)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           setToys(data);
         });
     } else {

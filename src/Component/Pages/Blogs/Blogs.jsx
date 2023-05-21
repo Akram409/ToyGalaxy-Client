@@ -1,4 +1,5 @@
-import img from "/public/profile.png";
+import ph from "/public/ph.jpg";
+import ak from "/public/ak.jpg";
 const Blogs = () => {
   return (
     <div className="container mx-auto mt-5">
@@ -8,7 +9,7 @@ const Blogs = () => {
       <div className="chat chat-start">
         <div className="chat-image avatar">
           <div className="w-10 rounded-full">
-            <img src={img} />
+            <img src={ph} />
           </div>
         </div>
         <div className="chat-header">
@@ -23,7 +24,7 @@ const Blogs = () => {
       <div className="chat chat-end">
         <div className="chat-image avatar">
           <div className="w-10 rounded-full">
-            <img src={img} />
+            <img src={ak} />
           </div>
         </div>
         <div className="chat-header font-bold">
@@ -50,7 +51,7 @@ const Blogs = () => {
       <div className="chat chat-end">
         <div className="chat-image avatar">
           <div className="w-10 rounded-full">
-            <img src={img} />
+            <img src={ak} />
           </div>
         </div>
         <div className="chat-header font-bold">
@@ -86,7 +87,7 @@ const Blogs = () => {
       <div className="chat chat-start">
         <div className="chat-image avatar">
           <div className="w-10 rounded-full">
-            <img src={img} />
+            <img src={ph} />
           </div>
         </div>
         <div className="chat-header">
@@ -100,7 +101,7 @@ const Blogs = () => {
       <div className="chat chat-end">
         <div className="chat-image avatar">
           <div className="w-10 rounded-full">
-            <img src={img} />
+            <img src={ak} />
           </div>
         </div>
         <div className="chat-header font-bold">
@@ -135,7 +136,7 @@ const Blogs = () => {
       <div className="chat chat-start">
         <div className="chat-image avatar">
           <div className="w-10 rounded-full">
-            <img src={img} />
+            <img src={ph} />
           </div>
         </div>
         <div className="chat-header">
@@ -149,7 +150,7 @@ const Blogs = () => {
       <div className="chat chat-end">
         <div className="chat-image avatar">
           <div className="w-10 rounded-full">
-            <img src={img} />
+            <img src={ak} />
           </div>
         </div>
         <div className="chat-header font-bold">
@@ -177,7 +178,7 @@ const Blogs = () => {
       <div className="chat chat-start">
         <div className="chat-image avatar">
           <div className="w-10 rounded-full">
-            <img src={img} />
+            <img src={ph} />
           </div>
         </div>
         <div className="chat-header">
@@ -191,7 +192,7 @@ const Blogs = () => {
       <div className="chat chat-end">
         <div className="chat-image avatar">
           <div className="w-10 rounded-full">
-            <img src={img} />
+            <img src={ak} />
           </div>
         </div>
         <div className="chat-header font-bold">

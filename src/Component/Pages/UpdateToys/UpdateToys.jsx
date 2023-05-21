@@ -1,44 +1,55 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useLoaderData } from "react-router-dom";
 import CreatableSelect from "react-select/creatable";
 import { toast } from "react-toastify";
 
-const AddToys = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
+const UpdateToys = () => {
+  const item = useLoaderData();
+  const {
+    _id,
+    category_name,
+    img,
+    name,
+    price,
+    rating,
+    quantity,
+    seller,
+    seller_email,
+    description,
+  } = item;
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    data.category_name = selectedOption.value;
-    const price = `$${data.price}`
-    data.price = price
+    console.log(data);
 
-    fetch("http://localhost:5000/addToys", {
-      method: "POST",
+    fetch(`http://localhost:5000/updateToys/${_id}`, {
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      if(data.insertedId)
-      {
-        toast.success("Toy Added Successfully!", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
-      }
-      })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.matchedCount > 0) {
+            toast.success("Toy Details Updated", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+              });;
+        }
+      });
   };
 
   const options = [
@@ -47,11 +58,10 @@ const AddToys = () => {
     { value: "StarWar", label: "StarWar" },
     { value: "Transformer", label: "Transformer" },
   ];
-
   return (
     <div className="container mx-auto mt-4 bg-[#4a3da7] card shadow-2xl ">
       <h1 className="text-5xl font-bold pt-3 text-center text-white">
-        Add Toy
+        Update Toy Details
       </h1>
       <div className="card-body">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -63,7 +73,7 @@ const AddToys = () => {
                 className="input input-bordered input-primary w-full "
                 {...register("img")}
                 placeholder="Picture Url"
-                defaultValue=""
+                defaultValue={img}
               />
 
               <input
@@ -71,14 +81,7 @@ const AddToys = () => {
                 className="input input-bordered input-primary w-full "
                 {...register("name", { required: true })}
                 placeholder="Toy Name"
-                defaultValue=""
-              />
-
-              <CreatableSelect
-                className="w-2/3"
-                defaultValue={selectedOption}
-                onChange={setSelectedOption}
-                options={options}
+                defaultValue={name}
               />
             </div>
 
@@ -88,7 +91,7 @@ const AddToys = () => {
                 className="input input-bordered input-primary w-full "
                 {...register("seller")}
                 placeholder="Seller"
-                defaultValue=""
+                defaultValue={seller}
               />
 
               <input
@@ -96,7 +99,7 @@ const AddToys = () => {
                 className="input input-bordered input-primary w-full "
                 {...register("seller_email")}
                 placeholder="Email"
-                defaultValue=""
+                defaultValue={seller_email}
               />
             </div>
 
@@ -107,7 +110,7 @@ const AddToys = () => {
                 className="input input-bordered input-primary w-full "
                 {...register("price", { required: true })}
                 placeholder="Price"
-                defaultValue=""
+                defaultValue={price}
               />
 
               <input
@@ -116,7 +119,7 @@ const AddToys = () => {
                 className="input input-bordered input-primary w-full "
                 {...register("rating", { required: true })}
                 placeholder="Rating"
-                defaultValue=""
+                defaultValue={rating}
               />
 
               <input
@@ -125,7 +128,7 @@ const AddToys = () => {
                 className="input input-bordered input-primary w-full "
                 {...register("quantity", { required: true })}
                 placeholder="Quantity"
-                defaultValue=""
+                defaultValue={quantity}
               />
             </div>
 
@@ -134,12 +137,13 @@ const AddToys = () => {
                 className="textarea  textarea-primary w-full"
                 {...register("description")}
                 placeholder="Description"
+                defaultValue={description}
               ></textarea>
             </div>
 
             <input
               className="btn bg-[#a3e635] font-bold text-black"
-              value="ADD TOY"
+              value="UPDATE TOY"
               type="submit"
             />
           </div>
@@ -149,4 +153,4 @@ const AddToys = () => {
   );
 };
 
-export default AddToys;
+export default UpdateToys;

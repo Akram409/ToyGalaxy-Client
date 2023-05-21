@@ -5,7 +5,7 @@ import "@smastrom/react-rating/style.css";
 const ToysDetails = () => {
    const user = useLoaderData()
    console.log(user)
-   const {description,img,name,price,quantity,rating,seller,seller_email} = user
+   const {_id,description,img,name,price,quantity,rating,seller,seller_email} = user
 
   return (
     <div className="hero min-h-[90vh]">
@@ -37,7 +37,7 @@ const ToysDetails = () => {
           <p className='font-bold'>Description: {description}</p>
           <div className='space-x-2'>
           <Link to='/'><button className="btn font-bold mt-5">Buy Now</button></Link>
-          <Link to='/'><button className="btn font-bold mt-5 btn-secondary ">Edit</button></Link>
+          <Link to={`/updateToys/${_id}`}><button className="btn font-bold mt-5 btn-secondary ">Edit</button></Link>
           </div>
         </div>
       </div>
