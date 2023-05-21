@@ -18,7 +18,7 @@ const AllToys = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `http://localhost:5000/allToys?page=${currentPage}&limit=${toysPerPage}`
+        `https://toy-factory-server-akram409.vercel.app/allToys?page=${currentPage}&limit=${toysPerPage}`
       );
       const data = await response.json();
       setToys(data);
@@ -33,20 +33,20 @@ const AllToys = () => {
   }
 
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("https://toy-factory-server-akram409.vercel.app/allToys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
 
   const handleSearchbtn = () => {
     if (findText !== "") {
-      fetch(`http://localhost:5000/searchToyByToySeller/${findText}`)
+      fetch(`https://toy-factory-server-akram409.vercel.app/searchToyByToySeller/${findText}`)
         .then((res) => res.json())
         .then((data) => {
           setToys(data);
         });
     } else {
-      fetch("http://localhost:5000/allToys")
+      fetch("https://toy-factory-server-akram409.vercel.app/allToys")
         .then((res) => res.json())
         .then((data) => setToys(data));
     }

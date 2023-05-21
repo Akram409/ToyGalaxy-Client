@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const GalleryCard = ({card}) => {
-    console.log(card)
     const {img,name,subtitle,price,} = card
     return (
         <Link to="/">

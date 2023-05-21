@@ -20,7 +20,7 @@ const MyToys = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `http://localhost:5000/myToys/${user?.email}?page=${currentPage}&limit=${toysPerPage}`
+        `https://toy-factory-server-akram409.vercel.app/myToys/${user?.email}?page=${currentPage}&limit=${toysPerPage}`
       );
       const data = await response.json();
       setToys(data.toys);
@@ -46,7 +46,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteToy/${_id}`, {
+        fetch(`https://toy-factory-server-akram409.vercel.app/deleteToy/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -69,7 +69,7 @@ const MyToys = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `http://localhost:5000/myToys/${user?.email}?page=${currentPage}&limit=${toysPerPage}&sortField=${sortField}&sortOrder=${sortOrder}`
+        `https://toy-factory-server-akram409.vercel.app/myToys/${user?.email}?page=${currentPage}&limit=${toysPerPage}&sortField=${sortField}&sortOrder=${sortOrder}`
       );
       const data = await response.json();
       setToys(data.toys);

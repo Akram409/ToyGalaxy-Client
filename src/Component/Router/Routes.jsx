@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys />,
-        loader: () => fetch("http://localhost:5000/totalToys"),
+        loader: () => fetch("https://toy-factory-server-akram409.vercel.app/totalToys"),
       },
       {
         path: "/addToys",
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
             <MyToys />
           </PrivateRoutes>
         ),
-        // loader: () => fetch('http://localhost:5000/allToys')
+        // loader: () => fetch('https://toy-factory-server-akram409.vercel.app/allToys')
       },
       {
         path: "/updateToys/:id",
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allToys/${params.id}`),
+          fetch(`https://toy-factory-server-akram409.vercel.app/allToys/${params.id}`),
       },
       {
         path: "/toyDetails/:id",
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allToys/${params.id}`),
+          fetch(`https://toy-factory-server-akram409.vercel.app/allToys/${params.id}`),
       }
     ],
   },

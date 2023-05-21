@@ -5,7 +5,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, handleLogOut } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user.di);
 
   const logOut = () => {
     handleLogOut();
@@ -94,7 +94,7 @@ const Navbar = () => {
             {user?.photoURL ? (
               <div className="w-20 rounded-full img__wrap">
                 <img className="img__img" src={user?.photoURL} />
-                <p className="img__description">{user?.displayName}</p>
+                <p className="img__description">jdskfjk</p>
               </div>
             ) : (
               <div className="w-20 rounded-full img__wrap">
@@ -104,7 +104,7 @@ const Navbar = () => {
                     "https://raw.githubusercontent.com/Akram409/Developer-Portfolio/main/images/profile.png"
                   }
                 />
-                <p className="img__description">{user?.displayName}</p>
+                <p className="img__description">adsfkj</p>
               </div>
             )}
           </label>

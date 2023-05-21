@@ -13,7 +13,7 @@ const ShopByCategory = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/shopByCategory/${text}`)
+    fetch(`https://toy-factory-server-akram409.vercel.app/shopByCategory/${text}`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, [text]);

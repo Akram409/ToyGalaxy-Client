@@ -16,7 +16,7 @@ const AddToys = () => {
   const onSubmit = (data) => {
     data.category_name = selectedOption.value;
 
-    fetch("http://localhost:5000/addToys", {
+    fetch("https://toy-factory-server-akram409.vercel.app/addToys", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
