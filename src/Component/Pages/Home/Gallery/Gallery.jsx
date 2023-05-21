@@ -28,7 +28,7 @@ const Gallery = () => {
       <div className="divider"></div>
       <div className="grid gap-6 mb-8 lg:grid-cols-4 sm:grid-cols-2">
         {items.map((card) => (
-          <GalleryCard key={card.isbn13} card={card} />
+          <GalleryCard key={card._id} card={card} />
         ))}
       </div>
     </div>
