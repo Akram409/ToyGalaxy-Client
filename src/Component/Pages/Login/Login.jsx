@@ -25,7 +25,7 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
 
   if (navigation.state === "loading") {
-    return <p>Loading</p>;
+    return <progress className="progress w-56"></progress>;
   }
 
   const handleGoogle = () => {

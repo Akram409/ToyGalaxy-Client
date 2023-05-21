@@ -25,7 +25,7 @@ const Register = () => {
   useTitle('Register')
   
   if (navigation.state === "loading") {
-    return <p>Loading</p>;
+    return <progress className="progress w-56"></progress>;
   }
 
   const handleGooglebtn = () => {

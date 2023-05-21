@@ -5,7 +5,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, handleLogOut } = useContext(AuthContext);
-  // console.log(user);
+  console.log(user);
   return (
     <div className="navbar bg-[#4a3da7] text-white py-4 px-5">
       <div className="navbar-start">
@@ -79,12 +79,12 @@ const Navbar = () => {
             className="btn btn-ghost btn-circle avatar showName"
           >
             {user?.photoURL ? (
-              <div className="w-10 rounded-full img__wrap">
+              <div className="w-16 rounded-full img__wrap">
                 <img className="img__img" src={user?.photoURL} />
                 <p className="img__description">{user?.displayName}</p>
               </div>
             ) : (
-              <div className="w-10 rounded-full img__wrap">
+              <div className="w-16 rounded-full img__wrap">
                 <img
                   className="img__img "
                   src={
@@ -109,9 +109,9 @@ const Navbar = () => {
             </li>
             {user ? (
               <li>
-                <NavLink to="/" onClick={handleLogOut}>
+                <Link to="/" onClick={handleLogOut}>
                   LogOut
-                </NavLink>
+                </Link>
               </li>
             ) : (
               <>

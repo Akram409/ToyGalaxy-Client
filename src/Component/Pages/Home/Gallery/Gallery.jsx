@@ -18,7 +18,7 @@ const Gallery = () => {
   const navigation = useNavigation();
 
   if (navigation.state === "loading") {
-    return <p>loading</p>;
+    return <progress className="progress w-56"></progress>;
   }
 
   return (
